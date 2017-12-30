@@ -1,0 +1,22 @@
+{
+  "name": "swinde/swunitprice",
+  "description": "",
+  "type": "oxideshop-module",
+  "minimum-stability": "dev",
+  "keywords": ["oxid","modules"],
+  "homepage": "https://github.com/swinde/swunitprice",
+  "license": [
+    "GPL-3.0",
+    "proprietary"
+  ],
+  "extra": {
+    "oxideshop": {
+      "target-directory": "swinde/swunitprice"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Swinde\\SwUnitprice\\": "../../../source/modules/swinde/swunitprice"
+    }
+  }
+}
