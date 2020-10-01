@@ -18,7 +18,7 @@ $sMetadataVersion = '2.0';
  */
 $aModule = [
     'id'           => 'swinde/swunitprice',
-    'title'        => '.BEES | Grundpreis für Artikel',
+    'title'        => '.BEES | Grundpreis für Artikel berechnen',
     'description'  => [
         'de' => 'Grundpreis für Artikel. (V6]',
         'en' => 'Grundpreis für Artikel. (V6]',
