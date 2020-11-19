@@ -1,5 +1,5 @@
 [{if $oDetailsProduct->oxarticles__oxunitquantity->value}]
     [{oxmultilang ident="DETAILS_ARTWEIGHT" suffix="COLON"}] [{$oDetailsProduct->getMarmUnitPrice()}]
 [{else}]
-    [{oxmultilang ident="DETAILS_ARTWEIGHT" suffix="COLON"}] [{$oDetailsProduct->oxarticles__oxweight->value}] [{oxmultilang ident="DETAILS_ARTWEIGHTUNIT"}]
+    [{oxmultilang ident="DETAILS_ARTWEIGHT" suffix="COLON"}] [{$oDetailsProduct->oxarticles__oxweight->value*1000}] [{oxmultilang ident="G"}]
 [{/if}]
