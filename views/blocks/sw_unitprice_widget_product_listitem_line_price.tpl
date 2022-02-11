@@ -33,14 +33,20 @@
                             </span><br/>
                         [{/block}]
 
-    [{if $oUnitPrice}]
-    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit text-nowrap">
-        [{$product->getMarmUnitPrice()}] | [{oxprice price=$product->getUnitPrice() currency=$oView->getActCurrency() }]/[{$product->getUnitName()}]
-
-    [{elseif $product->oxarticles__oxweight->value }]
-    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit text-nowrap">
-                                <span title="weight">[{oxmultilang ident="WEIGHT"}]</span>
-                                <span class="value">[{$product->oxarticles__oxweight->value*1000}] [{oxmultilang ident="G"}]</span>
-                            </span>
-    [{/if}]
+[{if $oUnitPrice}]
+    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit text-nowrap" style="font-size:0.95rem;">
+         [{*$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()*}]
+        [{if $product->oxarticles__oxunitname->value  == '_UNIT_KG'}]
+            [{*Gewicht von Kilogramm in Gramm umrechnen, wenn KG*}]
+            [{$product->getMarmUnitPrice()*1000}] [{oxmultilang ident="G"}] | [{oxprice price=$product->getUnitPrice() currency=$oView->getActCurrency() }]/[{$product->getUnitName()}]
+        [{else}]
+            [{$product->getMarmUnitPrice()}] | [{oxprice price=$product->getUnitPrice() currency=$oView->getActCurrency() }]/[{$product->getUnitName()}]
+        [{/if}]
+            </span>
+[{elseif $product->oxarticles__oxweight->value }]
+    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit text-nowrap" style="font-size: 0.8rem">
+        <span title="weight">[{oxmultilang ident="WEIGHT"}]</span>
+        <span class="value">[{$product->oxarticles__oxweight->value}] [{*oxmultilang ident="G"*}]</span>
+    </span>
+[{/if}]
     [{/oxhasrights}]
