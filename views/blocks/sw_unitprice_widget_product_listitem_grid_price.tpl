@@ -37,10 +37,13 @@
 
 [{if $oUnitPrice}]
     <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit text-nowrap" style="font-size:0.95rem;">
-         [{*$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()*}]
+          [{*$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()*}]
         [{if $product->oxarticles__oxunitname->value  == '_UNIT_KG'}]
             [{*Gewicht von Kilogramm in Gramm umrechnen, wenn KG*}]
             [{$product->getMarmUnitPrice()*1000}] [{oxmultilang ident="G"}] | [{oxprice price=$product->getUnitPrice() currency=$oView->getActCurrency() }]/[{$product->getUnitName()}]
+        [{elseif $product->oxarticles__oxunitname->value  == '_UNIT_L'}]
+            [{*Gewicht von Liter in Mililiter umrechnen, wenn Liter*}]
+            [{$product->getMarmUnitPrice()*1000}] [{oxmultilang ident="ml"}] | [{oxprice price=$product->getUnitPrice() currency=$oView->getActCurrency() }]/[{$product->getUnitName()}]
         [{else}]
             [{$product->getMarmUnitPrice()}] | [{oxprice price=$product->getUnitPrice() currency=$oView->getActCurrency() }]/[{$product->getUnitName()}]
         [{/if}]
