@@ -36,7 +36,7 @@
 [{/block}]
 
 [{if $oUnitPrice}]
-    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit text-nowrap" style="font-size:0.95rem;">
+    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit text-nowrap" >
           [{*$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()*}]
         [{if $product->oxarticles__oxunitname->value  == '_UNIT_KG'}]
             [{*Gewicht von Kilogramm in Gramm umrechnen, wenn KG*}]
