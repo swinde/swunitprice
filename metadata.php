@@ -23,7 +23,7 @@ $aModule = [
         'de' => 'Grundpreis für Artikel. (V6]',
         'en' => 'Grundpreis für Artikel. (V6]',
     ],
-    'version'      => '1.2.7',
+    'version'      => '1.2.8',
     'author'       => 'Steffen Winde',
     'url'          => 'http://winde-ganzig.de/',
     'email'        => '',
